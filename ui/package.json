@@ -1,0 +1,36 @@
+{
+
+  "name": "ui",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "static",
+  "proxy":"http://127.0.0.1:8080",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "prebuild": "rmdir /s/q ..\\app\\static && mkdir ..\\app\\static && del /q ..\\app\\templates\\index.html",
+    "build": "react-scripts build",
+    "postbuild": "xcopy /s .\\build ..\\app\\static && xcopy .\\build\\index.html ..\\app\\templates",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
